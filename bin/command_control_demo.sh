@@ -11,11 +11,12 @@ INIT="$STATUS --init query"
 
 # SERIAL controls which pump to talk to.
 # Please, be responsible and careful.
-SERIAL=208850
+SERIAL=740926
 # PORT is the device file to use.  My udev rules create a nice
 # persistent device.  You can try something like this:
 # PORT=$(python decocare/scan.py)
-PORT=/dev/ttyUSB.Carelink0
+#PORT=/dev/ttyUSB.Carelink0
+PORT=/dev/tty.Carelink-000013FA
 
 # just send power, and query basic status
 # will report suspend/resume state as well as whether or not the pump
@@ -26,7 +27,7 @@ sleep 2
 # --rate can be a float, like 2.0 or 0.025
 # --duration must be a multiple of 30 minutes
 # this sets a 0 rate for 90 minutes.
-$TEMPBASAL --rate 0 --duration 90
+$TEMPBASAL set --rate 0 --duration 90
 sleep 2
 # press the esc key, so we can see the results on the pump
 $PRESSKEY esc
