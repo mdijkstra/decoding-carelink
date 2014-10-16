@@ -1,0 +1,1 @@
+sudo ./mm-pages.py --serial 740926 --port /dev/ttyUSB0 -v history 0..1

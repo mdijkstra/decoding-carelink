@@ -1,0 +1,669 @@
+## do stuff with an insulin pump over RF
+using ` Namespace(begin=None, bytesPerRecord=None, command='tweak', descr=None, dryrun=False, effectTime=None, end=None, init=False, maxRecords=None, name=None, no_postlude=False, no_prelude=False, no_rf_prelude=False, other='ReadHistoryData', page=0, params=None, port='/dev/ttyUSB0', postfix=None, prefix=None, prefix_path='', save=False, saveall=True, serial='740926', verbose=[1]) `
+```
+INFO:decocare.link:Link opened serial port: Serial<id=0x7f896e3a6890, open=True>(port='/dev/ttyUSB0', baudrate=9600, bytesize=8, parity='N', stopbits=1, timeout=0.5, xonxoff=False, rtscts=False, dsrdtr=False)
+```
+```
+INFO:decocare.stick:PROCESS:OPEN:0.021
+INFO:decocare.stick:PROCESS:START:0.098:ProductInfo:0x04
+INFO:decocare.stick:link Stick transmit[None] reader[None] download_i[False] status[None] poll_size[None] poll_i[None] command[<ProductInfo:0x04:size(64)>] processing ProductInfo:0x04)
+INFO:decocare.stick:send_force_read: attempt 0/5 send command, read until we get something within some timeout
+INFO:decocare.stick:link Stick transmit[None] reader[None] download_i[False] status[None] poll_size[None] poll_i[None] command[<ProductInfo:0x04:size(64)>] sending ProductInfo:0x04)
+INFO:root:usb.write.len: 3
+0000   0x04 0x00 0x00                             ...
+DEBUG:decocare.stick:sleeping 0.001
+INFO:root:usb.read.len: 64
+INFO:root:usb.read.raw:
+0000   0x01 0x55 0x00 0x0c 0x10 0x00 0x00 0x00    .U......
+0008   0x01 0x43 0x6f 0x6d 0x4c 0x69 0x6e 0x6b    .ComLink
+0010   0x20 0x49 0x49 0x01 0x10 0x02 0x00 0x01     II.....
+0018   0x01 0x03 0x00 0x00 0x00 0x00 0x00 0x00    ........
+0020   0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00    ........
+0028   0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00    ........
+0030   0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00    ........
+0038   0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00    ........
+INFO:decocare.stick:quit send_force_read, found len: 64 expected 64 after 0 attempts
+INFO:decocare.stick:finished processing ProductInfo:0x04, {'description': 'ComLink II', 'software.version': '1.16', 'interfaces': [(0, 'Paradigm RF'), (1, 'USB')], 'product.version': '0.0', 'rf.freq': '868.35Mhz', 'serial': '0c1000'}
+INFO:decocare.stick:PROCESS:END:22.254:ProductInfo:0x04
+INFO:decocare.stick:{'description': 'ComLink II', 'software.version': '1.16', 'interfaces': [(0, 'Paradigm RF'), (1, 'USB')], 'product.version': '0.0', 'rf.freq': '868.35Mhz', 'serial': '0c1000'}
+INFO:decocare.stick:PROCESS:START:22.398:ProductInfo:0x04
+INFO:decocare.stick:link Stick transmit[None] reader[None] download_i[False] status[None] poll_size[None] poll_i[None] command[<ProductInfo:0x04:size(64)>] processing ProductInfo:0x04)
+INFO:decocare.stick:send_force_read: attempt 0/5 send command, read until we get something within some timeout
+INFO:decocare.stick:link Stick transmit[None] reader[None] download_i[False] status[None] poll_size[None] poll_i[None] command[<ProductInfo:0x04:size(64)>] sending ProductInfo:0x04)
+INFO:root:usb.write.len: 3
+0000   0x04 0x00 0x00                             ...
+DEBUG:decocare.stick:sleeping 0.001
+INFO:root:usb.read.len: 64
+INFO:root:usb.read.raw:
+0000   0x01 0x55 0x00 0x0c 0x10 0x00 0x00 0x00    .U......
+0008   0x01 0x43 0x6f 0x6d 0x4c 0x69 0x6e 0x6b    .ComLink
+0010   0x20 0x49 0x49 0x01 0x10 0x02 0x00 0x01     II.....
+0018   0x01 0x03 0x00 0x00 0x00 0x00 0x00 0x00    ........
+0020   0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00    ........
+0028   0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00    ........
+0030   0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00    ........
+0038   0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00    ........
+INFO:decocare.stick:quit send_force_read, found len: 64 expected 64 after 0 attempts
+INFO:decocare.stick:finished processing ProductInfo:0x04, {'description': 'ComLink II', 'software.version': '1.16', 'interfaces': [(0, 'Paradigm RF'), (1, 'USB')], 'product.version': '0.0', 'rf.freq': '868.35Mhz', 'serial': '0c1000'}
+INFO:decocare.stick:PROCESS:END:26.969:ProductInfo:0x04
+INFO:decocare.stick:{'description': 'ComLink II', 'software.version': '1.16', 'interfaces': [(0, 'Paradigm RF'), (1, 'USB')], 'product.version': '0.0', 'rf.freq': '868.35Mhz', 'serial': '0c1000'}
+INFO:decocare.stick:get signal strength of Stick transmit[None] reader[None] download_i[False] status[None] poll_size[None] poll_i[None] command[<ProductInfo:0x04:size(64)>]
+INFO:decocare.stick:PROCESS:START:27.194:SignalStrength:0x06 0x00
+INFO:decocare.stick:link Stick transmit[None] reader[None] download_i[False] status[None] poll_size[None] poll_i[None] command[<SignalStrength:0x06 0x00:size(64)>] processing SignalStrength:0x06 0x00)
+INFO:decocare.stick:send_force_read: attempt 0/5 send command, read until we get something within some timeout
+INFO:decocare.stick:link Stick transmit[None] reader[None] download_i[False] status[None] poll_size[None] poll_i[None] command[<SignalStrength:0x06 0x00:size(64)>] sending SignalStrength:0x06 0x00)
+INFO:root:usb.write.len: 3
+0000   0x06 0x00 0x00                             ...
+DEBUG:decocare.stick:sleeping 0.001
+INFO:root:usb.read.len: 64
+INFO:root:usb.read.raw:
+0000   0x01 0x55 0x00 0xbc 0x10 0x00 0x00 0x00    .U......
+0008   0x01 0x43 0x6f 0x6d 0x4c 0x69 0x6e 0x6b    .ComLink
+0010   0x20 0x49 0x49 0x01 0x10 0x02 0x00 0x01     II.....
+0018   0x01 0x03 0x00 0x00 0x00 0x00 0x00 0x00    ........
+0020   0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00    ........
+0028   0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00    ........
+0030   0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00    ........
+0038   0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00    ........
+INFO:decocare.stick:quit send_force_read, found len: 64 expected 64 after 0 attempts
+INFO:decocare.stick:<SignalStrength:0x06 0x00:size(64)>:readSignalStrength:188
+INFO:decocare.stick:finished processing SignalStrength:0x06 0x00, 188
+INFO:decocare.stick:PROCESS:END:30.346:SignalStrength:0x06 0x00
+INFO:decocare.stick:we seem to have found a nice signal strength of: 188
+```
+```
+INFO:decocare.session:setting up to talk with 740926
+```
+```
+INFO:decocare.stick:PROCESS:START:30.53:UsbStats:0x05 0x01
+INFO:decocare.stick:link Stick transmit[None] reader[None] download_i[False] status[None] poll_size[None] poll_i[None] command[<UsbStats:0x05 0x01:size(64)>] processing UsbStats:0x05 0x01)
+INFO:decocare.stick:send_force_read: attempt 0/5 send command, read until we get something within some timeout
+INFO:decocare.stick:link Stick transmit[None] reader[None] download_i[False] status[None] poll_size[None] poll_i[None] command[<UsbStats:0x05 0x01:size(64)>] sending UsbStats:0x05 0x01)
+INFO:root:usb.write.len: 3
+0000   0x05 0x01 0x00                             ...
+DEBUG:decocare.stick:sleeping 0.001
+INFO:root:usb.read.len: 64
+INFO:root:usb.read.raw:
+0000   0x01 0x55 0x00 0x00 0x00 0x00 0x00 0x00    .U......
+0008   0x00 0x38 0x24 0x00 0x00 0x38 0x24 0x38    .8$..8$8
+0010   0xb7 0x3a 0x6a 0x38 0x23 0x04 0x00 0x00    .:j8#...
+0018   0x05 0x03 0x00 0x00 0x00 0x00 0x00 0x00    ........
+0020   0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00    ........
+0028   0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00    ........
+0030   0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00    ........
+0038   0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00    ........
+INFO:decocare.stick:quit send_force_read, found len: 64 expected 64 after 0 attempts
+INFO:decocare.stick:finished processing UsbStats:0x05 0x01, {'errors.timeouts': 0, 'packets.transmit': 14372L, 'errors.naks': 0, 'errors.sequence': 0, 'packets.received': 14372L, 'errors.crc': 0}
+INFO:decocare.stick:PROCESS:END:33.521:UsbStats:0x05 0x01
+INFO:decocare.stick:PROCESS:START:33.598:RadioStats:0x05 0x00
+INFO:decocare.stick:link Stick transmit[None] reader[None] download_i[False] status[None] poll_size[None] poll_i[None] command[<RadioStats:0x05 0x00:size(64)>] processing RadioStats:0x05 0x00)
+INFO:decocare.stick:send_force_read: attempt 0/5 send command, read until we get something within some timeout
+INFO:decocare.stick:link Stick transmit[None] reader[None] download_i[False] status[None] poll_size[None] poll_i[None] command[<RadioStats:0x05 0x00:size(64)>] sending RadioStats:0x05 0x00)
+INFO:root:usb.write.len: 3
+0000   0x05 0x00 0x00                             ...
+DEBUG:decocare.stick:sleeping 0.001
+INFO:root:usb.read.len: 64
+INFO:root:usb.read.raw:
+0000   0x01 0x55 0x00 0x00 0x09 0x00 0x43 0x00    .U....C.
+0008   0x00 0x00 0xf7 0x00 0x00 0x01 0x44 0x00    ......D.
+0010   0x00 0x00 0xbc 0x00 0x40 0x00 0x79 0x00    ....@.y.
+0018   0xb6 0x00 0x0f 0x00 0x01 0x00 0x00 0x00    ........
+0020   0x00 0x01 0x00 0x82 0x00 0x00 0x00 0x00    ........
+0028   0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00    ........
+0030   0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00    ........
+0038   0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00    ........
+INFO:decocare.stick:quit send_force_read, found len: 64 expected 64 after 0 attempts
+INFO:decocare.stick:finished processing RadioStats:0x05 0x00, {'errors.timeouts': 67, 'packets.transmit': 324L, 'errors.naks': 0, 'errors.sequence': 9, 'packets.received': 247L, 'errors.crc': 0}
+INFO:decocare.stick:PROCESS:END:36.6:RadioStats:0x05 0x00
+```
+```javascript
+{'radio': {'errors.crc': 0,
+           'errors.naks': 0,
+           'errors.sequence': 9,
+           'errors.timeouts': 67,
+           'packets.received': 247L,
+           'packets.transmit': 324L},
+ 'usb': {'errors.crc': 0,
+         'errors.naks': 0,
+         'errors.sequence': 0,
+         'errors.timeouts': 0,
+         'packets.received': 14372L,
+         'packets.transmit': 14372L}}
+```
+```
+INFO:decocare.session:execute attempt: 1
+INFO:decocare.session:session transferring packet
+INFO:decocare.stick:transmit_packet:write:<TransmitPacket:ReadPumpModel:data:unknown>
+INFO:decocare.stick:PROCESS:START:37.364:TransmitPacket:ReadPumpModel:data:unknown
+INFO:decocare.stick:link Stick transmit[TransmitPacket:ReadPumpModel:data:unknown] reader[None] download_i[False] status[None] poll_size[None] poll_i[None] command[<TransmitPacket:ReadPumpModel:data:unknown>] processing TransmitPacket:ReadPumpModel:data:unknown)
+INFO:decocare.stick:send_force_read: attempt 0/5 send command, read until we get something within some timeout
+INFO:decocare.stick:link Stick transmit[TransmitPacket:ReadPumpModel:data:unknown] reader[None] download_i[False] status[None] poll_size[None] poll_i[None] command[<TransmitPacket:ReadPumpModel:data:unknown>] sending TransmitPacket:ReadPumpModel:data:unknown)
+DEBUG:decocare.stick:[1, 0, 167, 1, 116, 9, 38, 128, 0, 0, 2, 1, 0, 141, 100, 0]
+INFO:root:usb.write.len: 16
+0000   0x01 0x00 0xa7 0x01 0x74 0x09 0x26 0x80    ....t.&.
+0008   0x00 0x00 0x02 0x01 0x00 0x8d 0x64 0x00    ......d.
+DEBUG:decocare.stick:sleeping 0.001
+INFO:root:usb.read.len: 64
+INFO:root:usb.read.raw:
+0000   0x01 0x55 0x00 0x00 0x09 0x00 0x43 0x00    .U....C.
+0008   0x00 0x00 0xf7 0x00 0x00 0x01 0x44 0x00    ......D.
+0010   0x00 0x00 0xbc 0x00 0x40 0x00 0x79 0x00    ....@.y.
+0018   0xb6 0x00 0x0f 0x00 0x01 0x00 0x00 0x00    ........
+0020   0x00 0x01 0x00 0x82 0x00 0x00 0x00 0x00    ........
+0028   0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00    ........
+0030   0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00    ........
+0038   0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00    ........
+INFO:decocare.stick:quit send_force_read, found len: 64 expected 64 after 0 attempts
+INFO:decocare.stick:finished processing TransmitPacket:ReadPumpModel:data:unknown, bytearray(b'\x00\t\x00C\x00\x00\x00\xf7\x00\x00\x01D\x00\x00\x00\xbc\x00@\x00y\x00\xb6\x00\x0f\x00\x01\x00\x00\x00\x00\x01\x00\x82\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00')
+INFO:decocare.stick:PROCESS:END:41.048:TransmitPacket:ReadPumpModel:data:unknown
+INFO:decocare.session:sleeping 0.5 before download
+INFO:decocare.session:proceeding with download
+INFO:decocare.stick:download:start:0
+INFO:decocare.stick:Stick transmit[TransmitPacket:ReadPumpModel:data:unknown] reader[None] download_i[1] status[None] poll_size[None] poll_i[None] command[<TransmitPacket:ReadPumpModel:data:unknown>]:download(attempts[1],expect[0],results[0]:data[0]):begin first poll first sleep .250
+DEBUG:decocare.stick:<Stick transmit[TransmitPacket:ReadPumpModel:data:unknown] reader[None] download_i[1] status[None] poll_size[None] poll_i[None] command[<TransmitPacket:ReadPumpModel:data:unknown>]>:STARTING POLL PHASE:attempt:0
+DEBUG:decocare.stick:<Stick transmit[TransmitPacket:ReadPumpModel:data:unknown] reader[None] download_i[1] status[None] poll_size[0] poll_i[0] command[<TransmitPacket:ReadPumpModel:data:unknown>]>:poll:attempt:0
+INFO:decocare.stick:PROCESS:START:793.761:LinkStatus:0x03:status:size=64
+INFO:decocare.stick:link Stick transmit[TransmitPacket:ReadPumpModel:data:unknown] reader[None] download_i[1] status[None] poll_size[0] poll_i[0] command[<LinkStatus:0x03:status:size=64:size(64)>] processing LinkStatus:0x03:status:size=64)
+INFO:decocare.stick:send_force_read: attempt 0/5 send command, read until we get something within some timeout
+INFO:decocare.stick:link Stick transmit[TransmitPacket:ReadPumpModel:data:unknown] reader[None] download_i[1] status[None] poll_size[0] poll_i[0] command[<LinkStatus:0x03:status:size=64:size(64)>] sending LinkStatus:0x03:status:size=64)
+INFO:root:usb.write.len: 3
+0000   0x03 0x00 0x00                             ...
+DEBUG:decocare.stick:sleeping 0.001
+INFO:root:usb.read.len: 64
+INFO:root:usb.read.raw:
+0000   0x01 0x55 0x00 0x00 0x02 0x00 0x00 0x00    .U......
+0008   0x05 0x04 0x00 0x00 0x00 0x01 0x44 0x00    ......D.
+0010   0x00 0x00 0xbc 0x00 0x40 0x00 0x79 0x00    ....@.y.
+0018   0xb6 0x00 0x0f 0x00 0x01 0x00 0x00 0x00    ........
+0020   0x00 0x01 0x00 0x82 0x00 0x00 0x00 0x00    ........
+0028   0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00    ........
+0030   0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00    ........
+0038   0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00    ........
+INFO:decocare.stick:quit send_force_read, found len: 64 expected 64 after 0 attempts
+INFO:decocare.stick:LinkStatus:0x03:status:size=??LinkStatus:error:True:reason:['OK']
+
+INFO:decocare.stick:finished processing LinkStatus:0x03:status:size=??LinkStatus:error:True:reason:[], 0
+INFO:decocare.stick:PROCESS:END:804.485:LinkStatus:0x03:status:size=??LinkStatus:error:True:reason:[]
+DEBUG:decocare.stick:poll zero, sleeping in POLL, .100
+DEBUG:decocare.stick:<Stick transmit[TransmitPacket:ReadPumpModel:data:unknown] reader[None] download_i[1] status[<LinkStatus:0x03:status:size=??LinkStatus:error:True:reason:[]:size(0)>] poll_size[0] poll_i[1] command[<LinkStatus:0x03:status:size=??LinkStatus:error:True:reason:[]:size(0)>]>:poll:attempt:1
+INFO:decocare.stick:PROCESS:START:905.303:LinkStatus:0x03:status:size=64
+INFO:decocare.stick:link Stick transmit[TransmitPacket:ReadPumpModel:data:unknown] reader[None] download_i[1] status[<LinkStatus:0x03:status:size=??LinkStatus:error:True:reason:[]:size(0)>] poll_size[0] poll_i[1] command[<LinkStatus:0x03:status:size=64:size(64)>] processing LinkStatus:0x03:status:size=64)
+INFO:decocare.stick:send_force_read: attempt 0/5 send command, read until we get something within some timeout
+INFO:decocare.stick:link Stick transmit[TransmitPacket:ReadPumpModel:data:unknown] reader[None] download_i[1] status[<LinkStatus:0x03:status:size=??LinkStatus:error:True:reason:[]:size(0)>] poll_size[0] poll_i[1] command[<LinkStatus:0x03:status:size=64:size(64)>] sending LinkStatus:0x03:status:size=64)
+INFO:root:usb.write.len: 3
+0000   0x03 0x00 0x00                             ...
+DEBUG:decocare.stick:sleeping 0.001
+INFO:root:usb.read.len: 64
+INFO:root:usb.read.raw:
+0000   0x01 0x55 0x00 0x00 0x02 0x00 0x00 0x00    .U......
+0008   0x05 0x04 0x00 0x00 0x00 0x01 0x44 0x00    ......D.
+0010   0x00 0x00 0xbc 0x00 0x40 0x00 0x79 0x00    ....@.y.
+0018   0xb6 0x00 0x0f 0x00 0x01 0x00 0x00 0x00    ........
+0020   0x00 0x01 0x00 0x82 0x00 0x00 0x00 0x00    ........
+0028   0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00    ........
+0030   0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00    ........
+0038   0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00    ........
+INFO:decocare.stick:quit send_force_read, found len: 64 expected 64 after 0 attempts
+INFO:decocare.stick:LinkStatus:0x03:status:size=??LinkStatus:error:True:reason:['OK']
+
+INFO:decocare.stick:finished processing LinkStatus:0x03:status:size=??LinkStatus:error:True:reason:[], 0
+INFO:decocare.stick:PROCESS:END:929.846:LinkStatus:0x03:status:size=??LinkStatus:error:True:reason:[]
+DEBUG:decocare.stick:poll zero, sleeping in POLL, .100
+DEBUG:decocare.stick:<Stick transmit[TransmitPacket:ReadPumpModel:data:unknown] reader[None] download_i[1] status[<LinkStatus:0x03:status:size=??LinkStatus:error:True:reason:[]:size(0)>] poll_size[0] poll_i[2] command[<LinkStatus:0x03:status:size=??LinkStatus:error:True:reason:[]:size(0)>]>:poll:attempt:2
+INFO:decocare.stick:PROCESS:START:1030.594:LinkStatus:0x03:status:size=64
+INFO:decocare.stick:link Stick transmit[TransmitPacket:ReadPumpModel:data:unknown] reader[None] download_i[1] status[<LinkStatus:0x03:status:size=??LinkStatus:error:True:reason:[]:size(0)>] poll_size[0] poll_i[2] command[<LinkStatus:0x03:status:size=64:size(64)>] processing LinkStatus:0x03:status:size=64)
+INFO:decocare.stick:send_force_read: attempt 0/5 send command, read until we get something within some timeout
+INFO:decocare.stick:link Stick transmit[TransmitPacket:ReadPumpModel:data:unknown] reader[None] download_i[1] status[<LinkStatus:0x03:status:size=??LinkStatus:error:True:reason:[]:size(0)>] poll_size[0] poll_i[2] command[<LinkStatus:0x03:status:size=64:size(64)>] sending LinkStatus:0x03:status:size=64)
+INFO:root:usb.write.len: 3
+0000   0x03 0x00 0x00                             ...
+DEBUG:decocare.stick:sleeping 0.001
+INFO:root:usb.read.len: 64
+INFO:root:usb.read.raw:
+0000   0x01 0x55 0x00 0x00 0x02 0x00 0x00 0x00    .U......
+0008   0x05 0x04 0x00 0x00 0x00 0x01 0x44 0x00    ......D.
+0010   0x00 0x00 0xbc 0x00 0x40 0x00 0x79 0x00    ....@.y.
+0018   0xb6 0x00 0x0f 0x00 0x01 0x00 0x00 0x00    ........
+0020   0x00 0x01 0x00 0x82 0x00 0x00 0x00 0x00    ........
+0028   0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00    ........
+0030   0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00    ........
+0038   0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00    ........
+INFO:decocare.stick:quit send_force_read, found len: 64 expected 64 after 0 attempts
+INFO:decocare.stick:LinkStatus:0x03:status:size=??LinkStatus:error:True:reason:['OK']
+
+INFO:decocare.stick:finished processing LinkStatus:0x03:status:size=??LinkStatus:error:True:reason:[], 0
+INFO:decocare.stick:PROCESS:END:1054.184:LinkStatus:0x03:status:size=??LinkStatus:error:True:reason:[]
+DEBUG:decocare.stick:poll zero, sleeping in POLL, .100
+DEBUG:decocare.stick:<Stick transmit[TransmitPacket:ReadPumpModel:data:unknown] reader[None] download_i[1] status[<LinkStatus:0x03:status:size=??LinkStatus:error:True:reason:[]:size(0)>] poll_size[0] poll_i[3] command[<LinkStatus:0x03:status:size=??LinkStatus:error:True:reason:[]:size(0)>]>:poll:attempt:3
+INFO:decocare.stick:PROCESS:START:1154.957:LinkStatus:0x03:status:size=64
+INFO:decocare.stick:link Stick transmit[TransmitPacket:ReadPumpModel:data:unknown] reader[None] download_i[1] status[<LinkStatus:0x03:status:size=??LinkStatus:error:True:reason:[]:size(0)>] poll_size[0] poll_i[3] command[<LinkStatus:0x03:status:size=64:size(64)>] processing LinkStatus:0x03:status:size=64)
+INFO:decocare.stick:send_force_read: attempt 0/5 send command, read until we get something within some timeout
+INFO:decocare.stick:link Stick transmit[TransmitPacket:ReadPumpModel:data:unknown] reader[None] download_i[1] status[<LinkStatus:0x03:status:size=??LinkStatus:error:True:reason:[]:size(0)>] poll_size[0] poll_i[3] command[<LinkStatus:0x03:status:size=64:size(64)>] sending LinkStatus:0x03:status:size=64)
+INFO:root:usb.write.len: 3
+0000   0x03 0x00 0x00                             ...
+DEBUG:decocare.stick:sleeping 0.001
+INFO:root:usb.read.len: 64
+INFO:root:usb.read.raw:
+0000   0x01 0x55 0x00 0x00 0x02 0x00 0x00 0x00    .U......
+0008   0x05 0x04 0x00 0x00 0x00 0x01 0x44 0x00    ......D.
+0010   0x00 0x00 0xbc 0x00 0x40 0x00 0x79 0x00    ....@.y.
+0018   0xb6 0x00 0x0f 0x00 0x01 0x00 0x00 0x00    ........
+0020   0x00 0x01 0x00 0x82 0x00 0x00 0x00 0x00    ........
+0028   0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00    ........
+0030   0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00    ........
+0038   0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00    ........
+INFO:decocare.stick:quit send_force_read, found len: 64 expected 64 after 0 attempts
+INFO:decocare.stick:LinkStatus:0x03:status:size=??LinkStatus:error:True:reason:['OK']
+
+INFO:decocare.stick:finished processing LinkStatus:0x03:status:size=??LinkStatus:error:True:reason:[], 0
+INFO:decocare.stick:PROCESS:END:1178.614:LinkStatus:0x03:status:size=??LinkStatus:error:True:reason:[]
+DEBUG:decocare.stick:poll zero, sleeping in POLL, .100
+DEBUG:decocare.stick:<Stick transmit[TransmitPacket:ReadPumpModel:data:unknown] reader[None] download_i[1] status[<LinkStatus:0x03:status:size=??LinkStatus:error:True:reason:[]:size(0)>] poll_size[0] poll_i[4] command[<LinkStatus:0x03:status:size=??LinkStatus:error:True:reason:[]:size(0)>]>:poll:attempt:4
+INFO:decocare.stick:PROCESS:START:1279.359:LinkStatus:0x03:status:size=64
+INFO:decocare.stick:link Stick transmit[TransmitPacket:ReadPumpModel:data:unknown] reader[None] download_i[1] status[<LinkStatus:0x03:status:size=??LinkStatus:error:True:reason:[]:size(0)>] poll_size[0] poll_i[4] command[<LinkStatus:0x03:status:size=64:size(64)>] processing LinkStatus:0x03:status:size=64)
+INFO:decocare.stick:send_force_read: attempt 0/5 send command, read until we get something within some timeout
+INFO:decocare.stick:link Stick transmit[TransmitPacket:ReadPumpModel:data:unknown] reader[None] download_i[1] status[<LinkStatus:0x03:status:size=??LinkStatus:error:True:reason:[]:size(0)>] poll_size[0] poll_i[4] command[<LinkStatus:0x03:status:size=64:size(64)>] sending LinkStatus:0x03:status:size=64)
+INFO:root:usb.write.len: 3
+0000   0x03 0x00 0x00                             ...
+DEBUG:decocare.stick:sleeping 0.001
+INFO:root:usb.read.len: 64
+INFO:root:usb.read.raw:
+0000   0x01 0x55 0x00 0x00 0x02 0x00 0x00 0x00    .U......
+0008   0x05 0x04 0x00 0x00 0x00 0x01 0x44 0x00    ......D.
+0010   0x00 0x00 0xbc 0x00 0x40 0x00 0x79 0x00    ....@.y.
+0018   0xb6 0x00 0x0f 0x00 0x01 0x00 0x00 0x00    ........
+0020   0x00 0x01 0x00 0x82 0x00 0x00 0x00 0x00    ........
+0028   0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00    ........
+0030   0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00    ........
+0038   0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00    ........
+INFO:decocare.stick:quit send_force_read, found len: 64 expected 64 after 0 attempts
+INFO:decocare.stick:LinkStatus:0x03:status:size=??LinkStatus:error:True:reason:['OK']
+
+INFO:decocare.stick:finished processing LinkStatus:0x03:status:size=??LinkStatus:error:True:reason:[], 0
+INFO:decocare.stick:PROCESS:END:1283.316:LinkStatus:0x03:status:size=??LinkStatus:error:True:reason:[]
+DEBUG:decocare.stick:poll zero, sleeping in POLL, .100
+DEBUG:decocare.stick:<Stick transmit[TransmitPacket:ReadPumpModel:data:unknown] reader[None] download_i[1] status[<LinkStatus:0x03:status:size=??LinkStatus:error:True:reason:[]:size(0)>] poll_size[0] poll_i[5] command[<LinkStatus:0x03:status:size=??LinkStatus:error:True:reason:[]:size(0)>]>:poll:attempt:5
+INFO:decocare.stick:PROCESS:START:1383.92:LinkStatus:0x03:status:size=64
+INFO:decocare.stick:link Stick transmit[TransmitPacket:ReadPumpModel:data:unknown] reader[None] download_i[1] status[<LinkStatus:0x03:status:size=??LinkStatus:error:True:reason:[]:size(0)>] poll_size[0] poll_i[5] command[<LinkStatus:0x03:status:size=64:size(64)>] processing LinkStatus:0x03:status:size=64)
+INFO:decocare.stick:send_force_read: attempt 0/5 send command, read until we get something within some timeout
+INFO:decocare.stick:link Stick transmit[TransmitPacket:ReadPumpModel:data:unknown] reader[None] download_i[1] status[<LinkStatus:0x03:status:size=??LinkStatus:error:True:reason:[]:size(0)>] poll_size[0] poll_i[5] command[<LinkStatus:0x03:status:size=64:size(64)>] sending LinkStatus:0x03:status:size=64)
+INFO:root:usb.write.len: 3
+0000   0x03 0x00 0x00                             ...
+DEBUG:decocare.stick:sleeping 0.001
+INFO:root:usb.read.len: 64
+INFO:root:usb.read.raw:
+0000   0x01 0x55 0x00 0x00 0x02 0x00 0x00 0x00    .U......
+0008   0x05 0x04 0x00 0x00 0x00 0x01 0x44 0x00    ......D.
+0010   0x00 0x00 0xbc 0x00 0x40 0x00 0x79 0x00    ....@.y.
+0018   0xb6 0x00 0x0f 0x00 0x01 0x00 0x00 0x00    ........
+0020   0x00 0x01 0x00 0x82 0x00 0x00 0x00 0x00    ........
+0028   0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00    ........
+0030   0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00    ........
+0038   0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00    ........
+INFO:decocare.stick:quit send_force_read, found len: 64 expected 64 after 0 attempts
+INFO:decocare.stick:LinkStatus:0x03:status:size=??LinkStatus:error:True:reason:['OK']
+
+INFO:decocare.stick:finished processing LinkStatus:0x03:status:size=??LinkStatus:error:True:reason:[], 0
+INFO:decocare.stick:PROCESS:END:1407.718:LinkStatus:0x03:status:size=??LinkStatus:error:True:reason:[]
+DEBUG:decocare.stick:poll zero, sleeping in POLL, .100
+DEBUG:decocare.stick:<Stick transmit[TransmitPacket:ReadPumpModel:data:unknown] reader[None] download_i[1] status[<LinkStatus:0x03:status:size=??LinkStatus:error:True:reason:[]:size(0)>] poll_size[0] poll_i[6] command[<LinkStatus:0x03:status:size=??LinkStatus:error:True:reason:[]:size(0)>]>:poll:attempt:6
+INFO:decocare.stick:PROCESS:START:1508.308:LinkStatus:0x03:status:size=64
+INFO:decocare.stick:link Stick transmit[TransmitPacket:ReadPumpModel:data:unknown] reader[None] download_i[1] status[<LinkStatus:0x03:status:size=??LinkStatus:error:True:reason:[]:size(0)>] poll_size[0] poll_i[6] command[<LinkStatus:0x03:status:size=64:size(64)>] processing LinkStatus:0x03:status:size=64)
+INFO:decocare.stick:send_force_read: attempt 0/5 send command, read until we get something within some timeout
+INFO:decocare.stick:link Stick transmit[TransmitPacket:ReadPumpModel:data:unknown] reader[None] download_i[1] status[<LinkStatus:0x03:status:size=??LinkStatus:error:True:reason:[]:size(0)>] poll_size[0] poll_i[6] command[<LinkStatus:0x03:status:size=64:size(64)>] sending LinkStatus:0x03:status:size=64)
+INFO:root:usb.write.len: 3
+0000   0x03 0x00 0x00                             ...
+DEBUG:decocare.stick:sleeping 0.001
+INFO:root:usb.read.len: 64
+INFO:root:usb.read.raw:
+0000   0x01 0x55 0x00 0x00 0x02 0x00 0x00 0x00    .U......
+0008   0x05 0x04 0x00 0x00 0x00 0x01 0x44 0x00    ......D.
+0010   0x00 0x00 0xbc 0x00 0x40 0x00 0x79 0x00    ....@.y.
+0018   0xb6 0x00 0x0f 0x00 0x01 0x00 0x00 0x00    ........
+0020   0x00 0x01 0x00 0x82 0x00 0x00 0x00 0x00    ........
+0028   0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00    ........
+0030   0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00    ........
+0038   0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00    ........
+INFO:decocare.stick:quit send_force_read, found len: 64 expected 64 after 0 attempts
+INFO:decocare.stick:LinkStatus:0x03:status:size=??LinkStatus:error:True:reason:['OK']
+
+INFO:decocare.stick:finished processing LinkStatus:0x03:status:size=??LinkStatus:error:True:reason:[], 0
+INFO:decocare.stick:PROCESS:END:1531.682:LinkStatus:0x03:status:size=??LinkStatus:error:True:reason:[]
+DEBUG:decocare.stick:poll zero, sleeping in POLL, .100
+DEBUG:decocare.stick:<Stick transmit[TransmitPacket:ReadPumpModel:data:unknown] reader[None] download_i[1] status[<LinkStatus:0x03:status:size=??LinkStatus:error:True:reason:[]:size(0)>] poll_size[0] poll_i[7] command[<LinkStatus:0x03:status:size=??LinkStatus:error:True:reason:[]:size(0)>]>:poll:attempt:7
+INFO:decocare.stick:PROCESS:START:1632.42:LinkStatus:0x03:status:size=64
+INFO:decocare.stick:link Stick transmit[TransmitPacket:ReadPumpModel:data:unknown] reader[None] download_i[1] status[<LinkStatus:0x03:status:size=??LinkStatus:error:True:reason:[]:size(0)>] poll_size[0] poll_i[7] command[<LinkStatus:0x03:status:size=64:size(64)>] processing LinkStatus:0x03:status:size=64)
+INFO:decocare.stick:send_force_read: attempt 0/5 send command, read until we get something within some timeout
+INFO:decocare.stick:link Stick transmit[TransmitPacket:ReadPumpModel:data:unknown] reader[None] download_i[1] status[<LinkStatus:0x03:status:size=??LinkStatus:error:True:reason:[]:size(0)>] poll_size[0] poll_i[7] command[<LinkStatus:0x03:status:size=64:size(64)>] sending LinkStatus:0x03:status:size=64)
+INFO:root:usb.write.len: 3
+0000   0x03 0x00 0x00                             ...
+DEBUG:decocare.stick:sleeping 0.001
+INFO:root:usb.read.len: 64
+INFO:root:usb.read.raw:
+0000   0x01 0x55 0x00 0x00 0x02 0x00 0x00 0x00    .U......
+0008   0x05 0x04 0x00 0x00 0x00 0x01 0x44 0x00    ......D.
+0010   0x00 0x00 0xbc 0x00 0x40 0x00 0x79 0x00    ....@.y.
+0018   0xb6 0x00 0x0f 0x00 0x01 0x00 0x00 0x00    ........
+0020   0x00 0x01 0x00 0x82 0x00 0x00 0x00 0x00    ........
+0028   0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00    ........
+0030   0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00    ........
+0038   0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00    ........
+INFO:decocare.stick:quit send_force_read, found len: 64 expected 64 after 0 attempts
+INFO:decocare.stick:LinkStatus:0x03:status:size=??LinkStatus:error:True:reason:['OK']
+
+INFO:decocare.stick:finished processing LinkStatus:0x03:status:size=??LinkStatus:error:True:reason:[], 0
+INFO:decocare.stick:PROCESS:END:1637.335:LinkStatus:0x03:status:size=??LinkStatus:error:True:reason:[]
+DEBUG:decocare.stick:poll zero, sleeping in POLL, .100
+DEBUG:decocare.stick:<Stick transmit[TransmitPacket:ReadPumpModel:data:unknown] reader[None] download_i[1] status[<LinkStatus:0x03:status:size=??LinkStatus:error:True:reason:[]:size(0)>] poll_size[0] poll_i[8] command[<LinkStatus:0x03:status:size=??LinkStatus:error:True:reason:[]:size(0)>]>:poll:attempt:8
+INFO:decocare.stick:PROCESS:START:1738.496:LinkStatus:0x03:status:size=64
+INFO:decocare.stick:link Stick transmit[TransmitPacket:ReadPumpModel:data:unknown] reader[None] download_i[1] status[<LinkStatus:0x03:status:size=??LinkStatus:error:True:reason:[]:size(0)>] poll_size[0] poll_i[8] command[<LinkStatus:0x03:status:size=64:size(64)>] processing LinkStatus:0x03:status:size=64)
+INFO:decocare.stick:send_force_read: attempt 0/5 send command, read until we get something within some timeout
+INFO:decocare.stick:link Stick transmit[TransmitPacket:ReadPumpModel:data:unknown] reader[None] download_i[1] status[<LinkStatus:0x03:status:size=??LinkStatus:error:True:reason:[]:size(0)>] poll_size[0] poll_i[8] command[<LinkStatus:0x03:status:size=64:size(64)>] sending LinkStatus:0x03:status:size=64)
+INFO:root:usb.write.len: 3
+0000   0x03 0x00 0x00                             ...
+DEBUG:decocare.stick:sleeping 0.001
+INFO:root:usb.read.len: 64
+INFO:root:usb.read.raw:
+0000   0x01 0x55 0x00 0x00 0x02 0x00 0x00 0x00    .U......
+0008   0x05 0x04 0x00 0x00 0x00 0x01 0x44 0x00    ......D.
+0010   0x00 0x00 0xbc 0x00 0x40 0x00 0x79 0x00    ....@.y.
+0018   0xb6 0x00 0x0f 0x00 0x01 0x00 0x00 0x00    ........
+0020   0x00 0x01 0x00 0x82 0x00 0x00 0x00 0x00    ........
+0028   0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00    ........
+0030   0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00    ........
+0038   0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00    ........
+INFO:decocare.stick:quit send_force_read, found len: 64 expected 64 after 0 attempts
+INFO:decocare.stick:LinkStatus:0x03:status:size=??LinkStatus:error:True:reason:['OK']
+
+INFO:decocare.stick:finished processing LinkStatus:0x03:status:size=??LinkStatus:error:True:reason:[], 0
+INFO:decocare.stick:PROCESS:END:1763.942:LinkStatus:0x03:status:size=??LinkStatus:error:True:reason:[]
+DEBUG:decocare.stick:poll zero, sleeping in POLL, .100
+INFO:decocare.stick:Stick transmit[TransmitPacket:ReadPumpModel:data:unknown] reader[None] download_i[1] status[<LinkStatus:0x03:status:size=??LinkStatus:error:True:reason:[]:size(0)>] poll_size[0] poll_i[8] command[<LinkStatus:0x03:status:size=??LinkStatus:error:True:reason:[]:size(0)>]:STOP POLL after 9 attempts:size:0
+INFO:decocare.stick:Stick transmit[TransmitPacket:ReadPumpModel:data:unknown] reader[None] download_i[1] status[<LinkStatus:0x03:status:size=??LinkStatus:error:True:reason:[]:size(0)>] poll_size[0] poll_i[False] command[<LinkStatus:0x03:status:size=??LinkStatus:error:True:reason:[]:size(0)>]:download(attempts[1],expect[0],results[0]:data[0]):end first poll
+DEBUG:decocare.stick:<Stick transmit[TransmitPacket:ReadPumpModel:data:unknown] reader[None] download_i[1] status[<LinkStatus:0x03:status:size=??LinkStatus:error:True:reason:[]:size(0)>] poll_size[0] poll_i[False] command[<LinkStatus:0x03:status:size=??LinkStatus:error:True:reason:[]:size(0)>]>:STARTING POLL PHASE:attempt:0
+DEBUG:decocare.stick:<Stick transmit[TransmitPacket:ReadPumpModel:data:unknown] reader[None] download_i[1] status[<LinkStatus:0x03:status:size=??LinkStatus:error:True:reason:[]:size(0)>] poll_size[0] poll_i[0] command[<LinkStatus:0x03:status:size=??LinkStatus:error:True:reason:[]:size(0)>]>:poll:attempt:0
+INFO:decocare.stick:PROCESS:START:3367.739:LinkStatus:0x03:status:size=64
+INFO:decocare.stick:link Stick transmit[TransmitPacket:ReadPumpModel:data:unknown] reader[None] download_i[1] status[<LinkStatus:0x03:status:size=??LinkStatus:error:True:reason:[]:size(0)>] poll_size[0] poll_i[0] command[<LinkStatus:0x03:status:size=64:size(64)>] processing LinkStatus:0x03:status:size=64)
+INFO:decocare.stick:send_force_read: attempt 0/5 send command, read until we get something within some timeout
+INFO:decocare.stick:link Stick transmit[TransmitPacket:ReadPumpModel:data:unknown] reader[None] download_i[1] status[<LinkStatus:0x03:status:size=??LinkStatus:error:True:reason:[]:size(0)>] poll_size[0] poll_i[0] command[<LinkStatus:0x03:status:size=64:size(64)>] sending LinkStatus:0x03:status:size=64)
+INFO:root:usb.write.len: 3
+0000   0x03 0x00 0x00                             ...
+DEBUG:decocare.stick:sleeping 0.001
+INFO:root:usb.read.len: 64
+INFO:root:usb.read.raw:
+0000   0x01 0x55 0x00 0x00 0x02 0x00 0x00 0x00    .U......
+0008   0x05 0x04 0x00 0x00 0x00 0x01 0x44 0x00    ......D.
+0010   0x00 0x00 0xbc 0x00 0x40 0x00 0x79 0x00    ....@.y.
+0018   0xb6 0x00 0x0f 0x00 0x01 0x00 0x00 0x00    ........
+0020   0x00 0x01 0x00 0x82 0x00 0x00 0x00 0x00    ........
+0028   0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00    ........
+0030   0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00    ........
+0038   0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00    ........
+INFO:decocare.stick:quit send_force_read, found len: 64 expected 64 after 0 attempts
+INFO:decocare.stick:LinkStatus:0x03:status:size=??LinkStatus:error:True:reason:['OK']
+
+INFO:decocare.stick:finished processing LinkStatus:0x03:status:size=??LinkStatus:error:True:reason:[], 0
+INFO:decocare.stick:PROCESS:END:3374.947:LinkStatus:0x03:status:size=??LinkStatus:error:True:reason:[]
+DEBUG:decocare.stick:poll zero, sleeping in POLL, .100
+DEBUG:decocare.stick:<Stick transmit[TransmitPacket:ReadPumpModel:data:unknown] reader[None] download_i[1] status[<LinkStatus:0x03:status:size=??LinkStatus:error:True:reason:[]:size(0)>] poll_size[0] poll_i[1] command[<LinkStatus:0x03:status:size=??LinkStatus:error:True:reason:[]:size(0)>]>:poll:attempt:1
+INFO:decocare.stick:PROCESS:START:3475.673:LinkStatus:0x03:status:size=64
+INFO:decocare.stick:link Stick transmit[TransmitPacket:ReadPumpModel:data:unknown] reader[None] download_i[1] status[<LinkStatus:0x03:status:size=??LinkStatus:error:True:reason:[]:size(0)>] poll_size[0] poll_i[1] command[<LinkStatus:0x03:status:size=64:size(64)>] processing LinkStatus:0x03:status:size=64)
+INFO:decocare.stick:send_force_read: attempt 0/5 send command, read until we get something within some timeout
+INFO:decocare.stick:link Stick transmit[TransmitPacket:ReadPumpModel:data:unknown] reader[None] download_i[1] status[<LinkStatus:0x03:status:size=??LinkStatus:error:True:reason:[]:size(0)>] poll_size[0] poll_i[1] command[<LinkStatus:0x03:status:size=64:size(64)>] sending LinkStatus:0x03:status:size=64)
+INFO:root:usb.write.len: 3
+0000   0x03 0x00 0x00                             ...
+DEBUG:decocare.stick:sleeping 0.001
+INFO:root:usb.read.len: 64
+INFO:root:usb.read.raw:
+0000   0x01 0x55 0x00 0x00 0x02 0x00 0x00 0x00    .U......
+0008   0x05 0x04 0x00 0x00 0x00 0x01 0x44 0x00    ......D.
+0010   0x00 0x00 0xbc 0x00 0x40 0x00 0x79 0x00    ....@.y.
+0018   0xb6 0x00 0x0f 0x00 0x01 0x00 0x00 0x00    ........
+0020   0x00 0x01 0x00 0x82 0x00 0x00 0x00 0x00    ........
+0028   0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00    ........
+0030   0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00    ........
+0038   0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00    ........
+INFO:decocare.stick:quit send_force_read, found len: 64 expected 64 after 0 attempts
+INFO:decocare.stick:LinkStatus:0x03:status:size=??LinkStatus:error:True:reason:['OK']
+
+INFO:decocare.stick:finished processing LinkStatus:0x03:status:size=??LinkStatus:error:True:reason:[], 0
+INFO:decocare.stick:PROCESS:END:3480.571:LinkStatus:0x03:status:size=??LinkStatus:error:True:reason:[]
+DEBUG:decocare.stick:poll zero, sleeping in POLL, .100
+DEBUG:decocare.stick:<Stick transmit[TransmitPacket:ReadPumpModel:data:unknown] reader[None] download_i[1] status[<LinkStatus:0x03:status:size=??LinkStatus:error:True:reason:[]:size(0)>] poll_size[0] poll_i[2] command[<LinkStatus:0x03:status:size=??LinkStatus:error:True:reason:[]:size(0)>]>:poll:attempt:2
+INFO:decocare.stick:PROCESS:START:3581.604:LinkStatus:0x03:status:size=64
+INFO:decocare.stick:link Stick transmit[TransmitPacket:ReadPumpModel:data:unknown] reader[None] download_i[1] status[<LinkStatus:0x03:status:size=??LinkStatus:error:True:reason:[]:size(0)>] poll_size[0] poll_i[2] command[<LinkStatus:0x03:status:size=64:size(64)>] processing LinkStatus:0x03:status:size=64)
+INFO:decocare.stick:send_force_read: attempt 0/5 send command, read until we get something within some timeout
+INFO:decocare.stick:link Stick transmit[TransmitPacket:ReadPumpModel:data:unknown] reader[None] download_i[1] status[<LinkStatus:0x03:status:size=??LinkStatus:error:True:reason:[]:size(0)>] poll_size[0] poll_i[2] command[<LinkStatus:0x03:status:size=64:size(64)>] sending LinkStatus:0x03:status:size=64)
+INFO:root:usb.write.len: 3
+0000   0x03 0x00 0x00                             ...
+DEBUG:decocare.stick:sleeping 0.001
+INFO:root:usb.read.len: 64
+INFO:root:usb.read.raw:
+0000   0x01 0x55 0x00 0x00 0x02 0x00 0x00 0x00    .U......
+0008   0x05 0x04 0x00 0x00 0x00 0x01 0x44 0x00    ......D.
+0010   0x00 0x00 0xbc 0x00 0x40 0x00 0x79 0x00    ....@.y.
+0018   0xb6 0x00 0x0f 0x00 0x01 0x00 0x00 0x00    ........
+0020   0x00 0x01 0x00 0x82 0x00 0x00 0x00 0x00    ........
+0028   0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00    ........
+0030   0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00    ........
+0038   0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00    ........
+INFO:decocare.stick:quit send_force_read, found len: 64 expected 64 after 0 attempts
+INFO:decocare.stick:LinkStatus:0x03:status:size=??LinkStatus:error:True:reason:['OK']
+
+INFO:decocare.stick:finished processing LinkStatus:0x03:status:size=??LinkStatus:error:True:reason:[], 0
+INFO:decocare.stick:PROCESS:END:3604.461:LinkStatus:0x03:status:size=??LinkStatus:error:True:reason:[]
+DEBUG:decocare.stick:poll zero, sleeping in POLL, .100
+DEBUG:decocare.stick:<Stick transmit[TransmitPacket:ReadPumpModel:data:unknown] reader[None] download_i[1] status[<LinkStatus:0x03:status:size=??LinkStatus:error:True:reason:[]:size(0)>] poll_size[0] poll_i[3] command[<LinkStatus:0x03:status:size=??LinkStatus:error:True:reason:[]:size(0)>]>:poll:attempt:3
+INFO:decocare.stick:PROCESS:START:3706.542:LinkStatus:0x03:status:size=64
+INFO:decocare.stick:link Stick transmit[TransmitPacket:ReadPumpModel:data:unknown] reader[None] download_i[1] status[<LinkStatus:0x03:status:size=??LinkStatus:error:True:reason:[]:size(0)>] poll_size[0] poll_i[3] command[<LinkStatus:0x03:status:size=64:size(64)>] processing LinkStatus:0x03:status:size=64)
+INFO:decocare.stick:send_force_read: attempt 0/5 send command, read until we get something within some timeout
+INFO:decocare.stick:link Stick transmit[TransmitPacket:ReadPumpModel:data:unknown] reader[None] download_i[1] status[<LinkStatus:0x03:status:size=??LinkStatus:error:True:reason:[]:size(0)>] poll_size[0] poll_i[3] command[<LinkStatus:0x03:status:size=64:size(64)>] sending LinkStatus:0x03:status:size=64)
+INFO:root:usb.write.len: 3
+0000   0x03 0x00 0x00                             ...
+DEBUG:decocare.stick:sleeping 0.001
+INFO:root:usb.read.len: 64
+INFO:root:usb.read.raw:
+0000   0x01 0x55 0x00 0x00 0x02 0x00 0x00 0x00    .U......
+0008   0x05 0x04 0x00 0x00 0x00 0x01 0x44 0x00    ......D.
+0010   0x00 0x00 0xbc 0x00 0x40 0x00 0x79 0x00    ....@.y.
+0018   0xb6 0x00 0x0f 0x00 0x01 0x00 0x00 0x00    ........
+0020   0x00 0x01 0x00 0x82 0x00 0x00 0x00 0x00    ........
+0028   0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00    ........
+0030   0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00    ........
+0038   0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00    ........
+INFO:decocare.stick:quit send_force_read, found len: 64 expected 64 after 0 attempts
+INFO:decocare.stick:LinkStatus:0x03:status:size=??LinkStatus:error:True:reason:['OK']
+
+INFO:decocare.stick:finished processing LinkStatus:0x03:status:size=??LinkStatus:error:True:reason:[], 0
+INFO:decocare.stick:PROCESS:END:3728.885:LinkStatus:0x03:status:size=??LinkStatus:error:True:reason:[]
+DEBUG:decocare.stick:poll zero, sleeping in POLL, .100
+DEBUG:decocare.stick:<Stick transmit[TransmitPacket:ReadPumpModel:data:unknown] reader[None] download_i[1] status[<LinkStatus:0x03:status:size=??LinkStatus:error:True:reason:[]:size(0)>] poll_size[0] poll_i[4] command[<LinkStatus:0x03:status:size=??LinkStatus:error:True:reason:[]:size(0)>]>:poll:attempt:4
+INFO:decocare.stick:PROCESS:START:3830.552:LinkStatus:0x03:status:size=64
+INFO:decocare.stick:link Stick transmit[TransmitPacket:ReadPumpModel:data:unknown] reader[None] download_i[1] status[<LinkStatus:0x03:status:size=??LinkStatus:error:True:reason:[]:size(0)>] poll_size[0] poll_i[4] command[<LinkStatus:0x03:status:size=64:size(64)>] processing LinkStatus:0x03:status:size=64)
+INFO:decocare.stick:send_force_read: attempt 0/5 send command, read until we get something within some timeout
+INFO:decocare.stick:link Stick transmit[TransmitPacket:ReadPumpModel:data:unknown] reader[None] download_i[1] status[<LinkStatus:0x03:status:size=??LinkStatus:error:True:reason:[]:size(0)>] poll_size[0] poll_i[4] command[<LinkStatus:0x03:status:size=64:size(64)>] sending LinkStatus:0x03:status:size=64)
+INFO:root:usb.write.len: 3
+0000   0x03 0x00 0x00                             ...
+DEBUG:decocare.stick:sleeping 0.001
+INFO:root:usb.read.len: 64
+INFO:root:usb.read.raw:
+0000   0x01 0x55 0x00 0x00 0x02 0x00 0x00 0x00    .U......
+0008   0x05 0x04 0x00 0x00 0x00 0x01 0x44 0x00    ......D.
+0010   0x00 0x00 0xbc 0x00 0x40 0x00 0x79 0x00    ....@.y.
+0018   0xb6 0x00 0x0f 0x00 0x01 0x00 0x00 0x00    ........
+0020   0x00 0x01 0x00 0x82 0x00 0x00 0x00 0x00    ........
+0028   0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00    ........
+0030   0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00    ........
+0038   0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00    ........
+INFO:decocare.stick:quit send_force_read, found len: 64 expected 64 after 0 attempts
+INFO:decocare.stick:LinkStatus:0x03:status:size=??LinkStatus:error:True:reason:['OK']
+
+INFO:decocare.stick:finished processing LinkStatus:0x03:status:size=??LinkStatus:error:True:reason:[], 0
+INFO:decocare.stick:PROCESS:END:3853.324:LinkStatus:0x03:status:size=??LinkStatus:error:True:reason:[]
+DEBUG:decocare.stick:poll zero, sleeping in POLL, .100
+DEBUG:decocare.stick:<Stick transmit[TransmitPacket:ReadPumpModel:data:unknown] reader[None] download_i[1] status[<LinkStatus:0x03:status:size=??LinkStatus:error:True:reason:[]:size(0)>] poll_size[0] poll_i[5] command[<LinkStatus:0x03:status:size=??LinkStatus:error:True:reason:[]:size(0)>]>:poll:attempt:5
+INFO:decocare.stick:PROCESS:START:3954.038:LinkStatus:0x03:status:size=64
+INFO:decocare.stick:link Stick transmit[TransmitPacket:ReadPumpModel:data:unknown] reader[None] download_i[1] status[<LinkStatus:0x03:status:size=??LinkStatus:error:True:reason:[]:size(0)>] poll_size[0] poll_i[5] command[<LinkStatus:0x03:status:size=64:size(64)>] processing LinkStatus:0x03:status:size=64)
+INFO:decocare.stick:send_force_read: attempt 0/5 send command, read until we get something within some timeout
+INFO:decocare.stick:link Stick transmit[TransmitPacket:ReadPumpModel:data:unknown] reader[None] download_i[1] status[<LinkStatus:0x03:status:size=??LinkStatus:error:True:reason:[]:size(0)>] poll_size[0] poll_i[5] command[<LinkStatus:0x03:status:size=64:size(64)>] sending LinkStatus:0x03:status:size=64)
+INFO:root:usb.write.len: 3
+0000   0x03 0x00 0x00                             ...
+DEBUG:decocare.stick:sleeping 0.001
+INFO:root:usb.read.len: 64
+INFO:root:usb.read.raw:
+0000   0x01 0x55 0x00 0x00 0x02 0x00 0x00 0x00    .U......
+0008   0x05 0x04 0x00 0x00 0x00 0x01 0x44 0x00    ......D.
+0010   0x00 0x00 0xbc 0x00 0x40 0x00 0x79 0x00    ....@.y.
+0018   0xb6 0x00 0x0f 0x00 0x01 0x00 0x00 0x00    ........
+0020   0x00 0x01 0x00 0x82 0x00 0x00 0x00 0x00    ........
+0028   0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00    ........
+0030   0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00    ........
+0038   0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00    ........
+INFO:decocare.stick:quit send_force_read, found len: 64 expected 64 after 0 attempts
+INFO:decocare.stick:LinkStatus:0x03:status:size=??LinkStatus:error:True:reason:['OK']
+
+INFO:decocare.stick:finished processing LinkStatus:0x03:status:size=??LinkStatus:error:True:reason:[], 0
+INFO:decocare.stick:PROCESS:END:3979.763:LinkStatus:0x03:status:size=??LinkStatus:error:True:reason:[]
+DEBUG:decocare.stick:poll zero, sleeping in POLL, .100
+DEBUG:decocare.stick:<Stick transmit[TransmitPacket:ReadPumpModel:data:unknown] reader[None] download_i[1] status[<LinkStatus:0x03:status:size=??LinkStatus:error:True:reason:[]:size(0)>] poll_size[0] poll_i[6] command[<LinkStatus:0x03:status:size=??LinkStatus:error:True:reason:[]:size(0)>]>:poll:attempt:6
+INFO:decocare.stick:PROCESS:START:4081.546:LinkStatus:0x03:status:size=64
+INFO:decocare.stick:link Stick transmit[TransmitPacket:ReadPumpModel:data:unknown] reader[None] download_i[1] status[<LinkStatus:0x03:status:size=??LinkStatus:error:True:reason:[]:size(0)>] poll_size[0] poll_i[6] command[<LinkStatus:0x03:status:size=64:size(64)>] processing LinkStatus:0x03:status:size=64)
+INFO:decocare.stick:send_force_read: attempt 0/5 send command, read until we get something within some timeout
+INFO:decocare.stick:link Stick transmit[TransmitPacket:ReadPumpModel:data:unknown] reader[None] download_i[1] status[<LinkStatus:0x03:status:size=??LinkStatus:error:True:reason:[]:size(0)>] poll_size[0] poll_i[6] command[<LinkStatus:0x03:status:size=64:size(64)>] sending LinkStatus:0x03:status:size=64)
+INFO:root:usb.write.len: 3
+0000   0x03 0x00 0x00                             ...
+DEBUG:decocare.stick:sleeping 0.001
+INFO:root:usb.read.len: 64
+INFO:root:usb.read.raw:
+0000   0x01 0x55 0x00 0x00 0x02 0x00 0x00 0x00    .U......
+0008   0x05 0x04 0x00 0x00 0x00 0x01 0x44 0x00    ......D.
+0010   0x00 0x00 0xbc 0x00 0x40 0x00 0x79 0x00    ....@.y.
+0018   0xb6 0x00 0x0f 0x00 0x01 0x00 0x00 0x00    ........
+0020   0x00 0x01 0x00 0x82 0x00 0x00 0x00 0x00    ........
+0028   0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00    ........
+0030   0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00    ........
+0038   0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00    ........
+INFO:decocare.stick:quit send_force_read, found len: 64 expected 64 after 0 attempts
+INFO:decocare.stick:LinkStatus:0x03:status:size=??LinkStatus:error:True:reason:['OK']
+
+INFO:decocare.stick:finished processing LinkStatus:0x03:status:size=??LinkStatus:error:True:reason:[], 0
+INFO:decocare.stick:PROCESS:END:4103.575:LinkStatus:0x03:status:size=??LinkStatus:error:True:reason:[]
+DEBUG:decocare.stick:poll zero, sleeping in POLL, .100
+DEBUG:decocare.stick:<Stick transmit[TransmitPacket:ReadPumpModel:data:unknown] reader[None] download_i[1] status[<LinkStatus:0x03:status:size=??LinkStatus:error:True:reason:[]:size(0)>] poll_size[0] poll_i[7] command[<LinkStatus:0x03:status:size=??LinkStatus:error:True:reason:[]:size(0)>]>:poll:attempt:7
+INFO:decocare.stick:PROCESS:START:4204.285:LinkStatus:0x03:status:size=64
+INFO:decocare.stick:link Stick transmit[TransmitPacket:ReadPumpModel:data:unknown] reader[None] download_i[1] status[<LinkStatus:0x03:status:size=??LinkStatus:error:True:reason:[]:size(0)>] poll_size[0] poll_i[7] command[<LinkStatus:0x03:status:size=64:size(64)>] processing LinkStatus:0x03:status:size=64)
+INFO:decocare.stick:send_force_read: attempt 0/5 send command, read until we get something within some timeout
+INFO:decocare.stick:link Stick transmit[TransmitPacket:ReadPumpModel:data:unknown] reader[None] download_i[1] status[<LinkStatus:0x03:status:size=??LinkStatus:error:True:reason:[]:size(0)>] poll_size[0] poll_i[7] command[<LinkStatus:0x03:status:size=64:size(64)>] sending LinkStatus:0x03:status:size=64)
+INFO:root:usb.write.len: 3
+0000   0x03 0x00 0x00                             ...
+DEBUG:decocare.stick:sleeping 0.001
+INFO:root:usb.read.len: 64
+INFO:root:usb.read.raw:
+0000   0x01 0x55 0x00 0x00 0x02 0x00 0x00 0x00    .U......
+0008   0x05 0x04 0x00 0x00 0x00 0x01 0x44 0x00    ......D.
+0010   0x00 0x00 0xbc 0x00 0x40 0x00 0x79 0x00    ....@.y.
+0018   0xb6 0x00 0x0f 0x00 0x01 0x00 0x00 0x00    ........
+0020   0x00 0x01 0x00 0x82 0x00 0x00 0x00 0x00    ........
+0028   0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00    ........
+0030   0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00    ........
+0038   0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00    ........
+INFO:decocare.stick:quit send_force_read, found len: 64 expected 64 after 0 attempts
+INFO:decocare.stick:LinkStatus:0x03:status:size=??LinkStatus:error:True:reason:['OK']
+
+INFO:decocare.stick:finished processing LinkStatus:0x03:status:size=??LinkStatus:error:True:reason:[], 0
+INFO:decocare.stick:PROCESS:END:4228.363:LinkStatus:0x03:status:size=??LinkStatus:error:True:reason:[]
+DEBUG:decocare.stick:poll zero, sleeping in POLL, .100
+DEBUG:decocare.stick:<Stick transmit[TransmitPacket:ReadPumpModel:data:unknown] reader[None] download_i[1] status[<LinkStatus:0x03:status:size=??LinkStatus:error:True:reason:[]:size(0)>] poll_size[0] poll_i[8] command[<LinkStatus:0x03:status:size=??LinkStatus:error:True:reason:[]:size(0)>]>:poll:attempt:8
+INFO:decocare.stick:PROCESS:START:4329.14:LinkStatus:0x03:status:size=64
+INFO:decocare.stick:link Stick transmit[TransmitPacket:ReadPumpModel:data:unknown] reader[None] download_i[1] status[<LinkStatus:0x03:status:size=??LinkStatus:error:True:reason:[]:size(0)>] poll_size[0] poll_i[8] command[<LinkStatus:0x03:status:size=64:size(64)>] processing LinkStatus:0x03:status:size=64)
+INFO:decocare.stick:send_force_read: attempt 0/5 send command, read until we get something within some timeout
+INFO:decocare.stick:link Stick transmit[TransmitPacket:ReadPumpModel:data:unknown] reader[None] download_i[1] status[<LinkStatus:0x03:status:size=??LinkStatus:error:True:reason:[]:size(0)>] poll_size[0] poll_i[8] command[<LinkStatus:0x03:status:size=64:size(64)>] sending LinkStatus:0x03:status:size=64)
+INFO:root:usb.write.len: 3
+0000   0x03 0x00 0x00                             ...
+DEBUG:decocare.stick:sleeping 0.001
+INFO:root:usb.read.len: 64
+INFO:root:usb.read.raw:
+0000   0x01 0x55 0x00 0x00 0x02 0x00 0x00 0x00    .U......
+0008   0x05 0x04 0x00 0x00 0x00 0x01 0x44 0x00    ......D.
+0010   0x00 0x00 0xbc 0x00 0x40 0x00 0x79 0x00    ....@.y.
+0018   0xb6 0x00 0x0f 0x00 0x01 0x00 0x00 0x00    ........
+0020   0x00 0x01 0x00 0x82 0x00 0x00 0x00 0x00    ........
+0028   0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00    ........
+0030   0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00    ........
+0038   0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00    ........
+INFO:decocare.stick:quit send_force_read, found len: 64 expected 64 after 0 attempts
+INFO:decocare.stick:LinkStatus:0x03:status:size=??LinkStatus:error:True:reason:['OK']
+
+INFO:decocare.stick:finished processing LinkStatus:0x03:status:size=??LinkStatus:error:True:reason:[], 0
+INFO:decocare.stick:PROCESS:END:4351.686:LinkStatus:0x03:status:size=??LinkStatus:error:True:reason:[]
+DEBUG:decocare.stick:poll zero, sleeping in POLL, .100
+INFO:decocare.stick:Stick transmit[TransmitPacket:ReadPumpModel:data:unknown] reader[None] download_i[1] status[<LinkStatus:0x03:status:size=??LinkStatus:error:True:reason:[]:size(0)>] poll_size[0] poll_i[8] command[<LinkStatus:0x03:status:size=??LinkStatus:error:True:reason:[]:size(0)>]:STOP POLL after 9 attempts:size:0
+INFO:decocare.stick:Stick transmit[TransmitPacket:ReadPumpModel:data:unknown] reader[None] download_i[1] status[<LinkStatus:0x03:status:size=??LinkStatus:error:True:reason:[]:size(0)>] poll_size[0] poll_i[False] command[<LinkStatus:0x03:status:size=??LinkStatus:error:True:reason:[]:size(0)>]:download(attempts[1],expect[0],results[0]:data[0]):proceed to download packet
+INFO:decocare.stick:Stick transmit[TransmitPacket:ReadPumpModel:data:unknown] reader[None] download_i[1] status[<LinkStatus:0x03:status:size=??LinkStatus:error:True:reason:[]:size(0)>] poll_size[0] poll_i[False] command[<LinkStatus:0x03:status:size=??LinkStatus:error:True:reason:[]:size(0)>]:download_packet:0
+ERROR:decocare.stick:size (0) is less than 64 and not 15, which may cause an error.
+INFO:decocare.stick:PROCESS:START:4453.265:ReadRadio:size:0
+INFO:decocare.stick:send_force_read: attempt 0/5 send command, read until we get something within some timeout
+INFO:decocare.stick:link Stick transmit[TransmitPacket:ReadPumpModel:data:unknown] reader[ReadRadio:size:0] download_i[1] status[<LinkStatus:0x03:status:size=??LinkStatus:error:True:reason:[]:size(0)>] poll_size[0] poll_i[False] command[<ReadRadio:size:0>] sending ReadRadio:size:0)
+INFO:root:usb.write.len: 5
+0000   0x0c 0x00 0x00 0x00 0x28                   ....(
+DEBUG:decocare.stick:sleeping 0.001
+INFO:root:usb.read.len: 0
+INFO:root:usb.read.raw:
+
+INFO:decocare.stick:zero length READ, try once more sleep .250
+INFO:root:usb.read.len: 0
+INFO:root:usb.read.raw:
+
+INFO:decocare.stick:send_force_read: attempt 1/5 send command, read until we get something within some timeout
+INFO:decocare.stick:link Stick transmit[TransmitPacket:ReadPumpModel:data:unknown] reader[ReadRadio:size:0] download_i[1] status[<LinkStatus:0x03:status:size=??LinkStatus:error:True:reason:[]:size(0)>] poll_size[0] poll_i[False] command[<ReadRadio:size:0>] sending ReadRadio:size:0)
+INFO:root:usb.write.len: 5
+0000   0x0c 0x00 0x00 0x00 0x28                   ....(
+DEBUG:decocare.stick:sleeping 0.001
+INFO:root:usb.read.len: 0
+INFO:root:usb.read.raw:
+
+INFO:decocare.stick:zero length READ, try once more sleep .250
+INFO:root:usb.read.len: 0
+INFO:root:usb.read.raw:
+
+INFO:decocare.stick:send_force_read: attempt 2/5 send command, read until we get something within some timeout
+INFO:decocare.stick:link Stick transmit[TransmitPacket:ReadPumpModel:data:unknown] reader[ReadRadio:size:0] download_i[1] status[<LinkStatus:0x03:status:size=??LinkStatus:error:True:reason:[]:size(0)>] poll_size[0] poll_i[False] command[<ReadRadio:size:0>] sending ReadRadio:size:0)
+INFO:root:usb.write.len: 5
+0000   0x0c 0x00 0x00 0x00 0x28                   ....(
+DEBUG:decocare.stick:sleeping 0.001
+INFO:root:usb.read.len: 0
+INFO:root:usb.read.raw:
+
+INFO:decocare.stick:zero length READ, try once more sleep .250
+INFO:root:usb.read.len: 0
+INFO:root:usb.read.raw:
+
+INFO:decocare.stick:send_force_read: attempt 3/5 send command, read until we get something within some timeout
+INFO:decocare.stick:link Stick transmit[TransmitPacket:ReadPumpModel:data:unknown] reader[ReadRadio:size:0] download_i[1] status[<LinkStatus:0x03:status:size=??LinkStatus:error:True:reason:[]:size(0)>] poll_size[0] poll_i[False] command[<ReadRadio:size:0>] sending ReadRadio:size:0)
+INFO:root:usb.write.len: 5
+0000   0x0c 0x00 0x00 0x00 0x28                   ....(
+DEBUG:decocare.stick:sleeping 0.001
+INFO:root:usb.read.len: 0
+INFO:root:usb.read.raw:
+
+INFO:decocare.stick:zero length READ, try once more sleep .250
+INFO:root:usb.read.len: 0
+INFO:root:usb.read.raw:
+
+INFO:decocare.stick:send_force_read: attempt 4/5 send command, read until we get something within some timeout
+INFO:decocare.stick:link Stick transmit[TransmitPacket:ReadPumpModel:data:unknown] reader[ReadRadio:size:0] download_i[1] status[<LinkStatus:0x03:status:size=??LinkStatus:error:True:reason:[]:size(0)>] poll_size[0] poll_i[False] command[<ReadRadio:size:0>] sending ReadRadio:size:0)
+INFO:root:usb.write.len: 5
+0000   0x0c 0x00 0x00 0x00 0x28                   ....(
+DEBUG:decocare.stick:sleeping 0.001
+INFO:root:usb.read.len: 0
+INFO:root:usb.read.raw:
+
+INFO:decocare.stick:zero length READ, try once more sleep .250
+INFO:root:usb.read.len: 0
+INFO:root:usb.read.raw:
+
+CRITICAL:decocare.stick:FAILED TO DOWNLOAD ANYTHING, after 4  expected:64
+INFO:decocare.stick:zero length READ, try once more sleep .500
+INFO:root:usb.read.len: 0
+INFO:root:usb.read.raw:
+
+ERROR:decocare.stick:ReadRadio ACK is zero bytes!
