@@ -72,15 +72,28 @@ class PagedData (object):
   """
 
   def __init__ (self, stream):
-    raw = bytearray(stream.read(1024))
-    data, crc = raw[0:1022], raw[1022:]
-    computed = lib.CRC16CCITT.compute(bytearray(data))
+    raw = bytearray(stream.read(2048))
+    
+    # check page 1
+    data1, crc = raw[0:1022], raw[1022:1024] # raw[0:1022], raw[1022:]
+    computed = lib.CRC16CCITT.compute(bytearray(data1))
     if lib.BangInt(crc) != computed:
-      assert lib.BangInt(crc) == computed, "CRC does not match page data"
+      assert lib.BangInt(crc) == computed, "CRC does not match page data1"
+    
+    # check page 2
+    data2, crc = raw[1024:2046], raw[2046:2048] # raw[0:1022], raw[1022:]
+    computed = lib.CRC16CCITT.compute(bytearray(data2))
+    if lib.BangInt(crc) != computed:
+      assert lib.BangInt(crc) == computed, "CRC does not match page data2"
+    
+    # combine pages
+    #data1.reverse( )
+    #data2.reverse( )
+    data = data1 + data2
     
     data.reverse( )
     self.data = self.eat_nulls(data)
-    self.stream = io.BufferedReader(io.BytesIO(self.data))
+    self.stream = io.BufferedReader(io.BytesIO(self.data), buffer_size=2044)
 
   def eat_nulls (self, data):
     i = 0
@@ -254,7 +267,7 @@ class ListCGM (object):
     for stream in opts.infile:
       page = PagedData(stream)
       self.records.extend(page.decode( ))
-
+  
     self.print_records(self.records)
 
 if __name__ == '__main__':
